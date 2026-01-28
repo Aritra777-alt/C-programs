@@ -1,0 +1,48 @@
+# include <stdio.h>
+ int main ()
+ {
+
+    repeat :
+    
+    // Finding GCD using Euclid's algorithm .
+    
+    int num , denom , temp , n , m , gcd , num_low , denom_low ; 
+
+    printf ( " Enter a fraction : ") ;
+    scanf ( "%d/%d" , &num , &denom ) ;
+
+    // Special Cases 
+    if ( num == 0 ) 
+    {
+        printf ( " In lowest terms : %d \n" , num) ;
+    }
+    
+    else if ( denom == 0 ) 
+    {
+        printf ( "NOT DEFINED !! , Denominator cannot be zero!! \n " ) ;
+    }
+
+    // Euclid's algorithm
+    m = num ;
+    n = denom ;
+
+    while ( n != 0)
+    {
+         temp  = n ;
+         n= m % n ;
+         m = temp ;
+    }
+
+     gcd = m ;
+    
+     
+     num_low = num / gcd ;
+     denom_low = denom / gcd ;
+
+    printf ( " In lowest terms: %d / %d \n" , num_low , denom_low ) ;
+
+goto repeat ;    
+
+return 0 ;
+
+}
