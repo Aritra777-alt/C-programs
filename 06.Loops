@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main ()
+{
+    int m , n , temp ;
+
+    printf ( " Enter two integers : ") ;
+    scanf ( "%d %d" , &m , &n ) ;
+
+    // Special Cases 
+    if ( n == 0 ) 
+    {
+        printf ( " Greatest common divisor : %d\n " , m) ;
+    }
+    
+    else if ( m == 0 ) 
+    {
+        printf ( " Greatest common divisor: %d\n" , n ) ;
+    }
+
+    // Euclid's algorithm
+
+    while ( n != 0)
+    {
+         temp  = n  ;
+         n = m % n ;
+         m = temp ;
+    }
+    
+     printf ( " Greatest common divisor : %d\n" , m) ;
+
+    
+return 0 ;
+}
